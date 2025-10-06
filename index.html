@@ -33,7 +33,7 @@
         <a href="#faq" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">FAQs</a>
         <a href="#contact" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">Contact</a>
       </nav>
-      <a href="#chatbot" class="hidden md:inline-block px-5 py-2 text-sm bg-zen-blue-gradient text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition duration-300 hover:scale-105"> FLOW bot</a>
+      <a href="#chatbot" id="flowbot-header-btn" class="hidden md:inline-block px-5 py-2 text-sm bg-zen-blue-gradient text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition duration-300 hover:scale-105"> FLOW bot</a>
     </div>
   </header>
 
@@ -48,7 +48,7 @@
        ZENFLOW is an AI-powered chatbot that simplifies groundwater data, predictions, and water management planning for communities and researchers
       </p>
       <div class="mt-12 flex justify-center gap-6">
-        <a href="#chatbot" class="px-10 py-4 bg-zen-green text-white font-bold text-lg rounded-full shadow-2xl shadow-zen-green/50 hover:bg-opacity-90 transition duration-300 hover:scale-105 transform">
+        <a href="#chatbot" id="flowbot-hero-btn" class="px-10 py-4 bg-zen-green text-white font-bold text-lg rounded-full shadow-2xl shadow-zen-green/50 hover:bg-opacity-90 transition duration-300 hover:scale-105 transform">
           🚀 Launch FLOW bot
         </a>
         <a href="#features" class="px-10 py-4 border-2 border-white/70 rounded-full font-semibold text-lg hover:bg-white hover:text-indigo-800 transition duration-300 transform hover:scale-105">
@@ -137,9 +137,7 @@
   </div>
 </section>
 
----
-
-<section id="impact" class="bg-white py-24 px-6">
+  <section id="impact" class="bg-white py-24 px-6">
   <div class="max-w-5xl mx-auto text-center">
     <h3 class="text-5xl font-extrabold text-zen-blue mb-16">🌱 Driving Real-World Impact</h3>
     <div class="grid md:grid-cols-3 gap-12">
@@ -166,9 +164,7 @@
   </div>
 </section>
 
----
-
-<section id="faq" class="bg-gray-50 py-24 px-6">
+  <section id="faq" class="bg-gray-50 py-24 px-6">
   <div class="max-w-4xl mx-auto">
     <h3 class="text-5xl font-extrabold text-zen-blue text-center mb-16">❓ Quick Answers (FAQs)</h3>
     
@@ -216,9 +212,7 @@
   </div>
 </section>
 
----
-
-<section id="contact" class="bg-zen-blue-gradient py-24 px-6 text-white">
+  <section id="contact" class="bg-zen-blue-gradient py-24 px-6 text-white">
   <div class="max-w-4xl mx-auto text-center">
     <h3 class="text-5xl font-extrabold mb-4">🤝 Collaborate with Us</h3>
     <p class="text-white/80 text-xl font-light mb-12">
@@ -264,41 +258,32 @@
     </div>
   </div>
 </footer>
-<footer class="bg-gray-900 text-white py-10 px-6">
-  </footer>
 
 <script>
 /**
- * Opens the FlowBot chatbot interface in a new browser tab.
- * This is the function linked to both the header button and the hero CTA.
+ * Opens the 'flowbot.html' page in a new tab.
  */
 function launchFlowBot() {
-    // IMPORTANT: Replace 'flowbot.html' with the actual URL of your chatbot application
-    // If you haven't created 'flowbot.html', clicking this will open a blank page named 'flowbot.html'.
+    // This is the file that contains the message and video link.
     const chatbotURL = 'flowbot.html'; 
     window.open(chatbotURL, '_blank');
 }
 
-// Function to attach the event listeners to the buttons after the page loads
 function setupFlowBotButtons() {
-    // 1. Get the header button
-    const headerButton = document.querySelector('header a[href="#chatbot"]');
+    const headerButton = document.getElementById('flowbot-header-btn');
+    const heroButton = document.getElementById('flowbot-hero-btn');
     
-    // 2. Get the primary hero CTA button
-    // It's the first button inside the hero section's div, which is cleaner than querying by class/text
-    const heroButton = document.querySelector('section.bg-zen-blue-gradient a[href="#chatbot"]');
-    
-    // Add event listeners, preventing the default anchor behavior
+    // Attach the launchFlowBot function to both buttons
     if (headerButton) {
         headerButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the scroll to #chatbot
+            event.preventDefault(); // Stop the default scroll behavior
             launchFlowBot();
         });
     }
 
     if (heroButton) {
         heroButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the scroll to #chatbot
+            event.preventDefault(); // Stop the default scroll behavior
             launchFlowBot();
         });
     }
@@ -307,6 +292,6 @@ function setupFlowBotButtons() {
 // Execute the setup function once the page is fully loaded
 document.addEventListener('DOMContentLoaded', setupFlowBotButtons);
 </script>
+
 </body>
 </html>
-
