@@ -82,10 +82,14 @@
             border-top-color: #2d3748;
         }
 
-        /* CUSTOM SWITCH CSS (Ensures smooth movement) */
-        /* This class is added/removed by JS to control the thumb's movement */
+        /* CUSTOM SWITCH CSS (Ensures smooth movement to the far right) */
+        /* w-20 is 5rem (80px), w-6 is 1.5rem (24px). Movement = 80px - 24px = 56px. */
         .thumb-moved {
-            transform: translateX(100%);
+            /* 56px = 3.5rem in Tailwind's scale. We use calc for precision and to overcome Tailwind limitations. */
+            transform: translateX(calc(5rem - 0.25rem - 1.5rem)); /* Track Width - Padding - Thumb Width = 80px - 4px - 24px = 52px (approx) */
+            /* Using a fixed pixel or rem value is simpler if we account for the padding on the button element (p-1) */
+            /* The button has p-1 (4px) padding, so the movement needs to be 80 - 8 (p-1 left/right) - 24 = 48px to the right of the starting point. */
+            transform: translateX(48px);
         }
         
     </style>
@@ -359,10 +363,9 @@
         const toggleButton = document.getElementById('mode-toggle');
         const modeIcon = document.getElementById('mode-icon');
         const switchThumb = document.getElementById('switch-thumb');
-        // Note: We don't need lightIcon explicitly in JS since its look is controlled by CSS/parent dark class
-
-        // CSS class for moving the thumb
-        const MOVED_CLASS = 'thumb-moved';
+        
+        // CSS class for moving the thumb (48px provides the perfect right-side alignment)
+        const MOVED_CLASS = 'thumb-moved'; 
 
         // Function to set the theme
         function setTheme(theme) {
@@ -375,14 +378,14 @@
         // Function to update the icon and position
         function updateSwitchAppearance(theme) {
             if (theme === 'dark') {
-                // Add class to move the thumb to the right
+                // Add class to move the thumb to the far right
                 switchThumb.classList.add(MOVED_CLASS);
                 
                 // Update the icon on the thumb to MOON
                 modeIcon.classList.remove('fa-sun');
                 modeIcon.classList.add('fa-moon');
             } else {
-                // Remove class to move the thumb back to the left
+                // Remove class to move the thumb back to the far left
                 switchThumb.classList.remove(MOVED_CLASS);
                 
                 // Update the icon on the thumb to SUN
