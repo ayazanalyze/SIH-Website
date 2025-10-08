@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,16 +11,77 @@
         html { scroll-behavior: smooth; }
         body { font-family: 'Inter', sans-serif; }
 
-        /* 🌌 Deep Tech Blue Gradient for Hero */
+        /* --- LIGHT MODE STYLES (Default) --- */
+
+        /* 🌌 Deep Tech Blue Gradient for Hero (Light Mode) */
         .bg-deep-tech-gradient {
             /* Rich, professional blue/teal gradient */
             background: linear-gradient(to bottom right, #07193b, #032a4e, #07132a);
         }
 
-        /* Custom Colors for Consistency */
-        .text-zen-blue { color: #0891b2; /* New Main Accent: Cyan-600 */ }
-        .bg-zen-green { background-color: #14b8a6; /* New Secondary Accent: Teal-500 */ }
-        .border-zen-green { border-color: #14b8a6; /* New Secondary Accent: Teal-500 */ }
+        /* Custom Colors for Consistency (Light Mode) */
+        .text-zen-blue { color: #0891b2; /* Cyan-600 */ }
+        .bg-zen-green { background-color: #14b8a6; /* Teal-500 */ }
+        .border-zen-green { border-color: #14b8a6; /* Teal-500 */ }
+        
+        /* --- DARK MODE OVERRIDES --- */
+        
+        /* Base Dark Mode Colors */
+        .dark body {
+            background-color: #0d1117; /* GitHub Dark Background */
+            color: #e2e8f0;
+        }
+        
+        /* UPDATED: Solid Dark Background for Hero in Dark Mode */
+        .dark .bg-deep-tech-gradient {
+            background: #0a0f18; /* Deep Space Black */
+        }
+        
+        /* Standard Dark Mode Overrides */
+        .dark .bg-gray-50 { background-color: #1a202c; /* Darker sections */ }
+        .dark .text-gray-800 { color: #e2e8f0; }
+
+        /* Header in Dark Mode */
+        .dark header {
+            background-color: #1a202c99;
+            border-bottom-color: #2d3748;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+        .dark header a { color: #90cdf4; /* Light Blue for nav links */ }
+        .dark header h1 { color: #fff; }
+        .dark header h1 .fa-droplet { color: #4fd1c5; /* Adjust icon color for dark mode */ }
+
+        /* Card Backgrounds in Dark Mode */
+        .dark #features .bg-white,
+        .dark #how .bg-white {
+            background-color: #1a202c;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+        }
+        .dark #features .text-gray-600,
+        .dark #how .text-gray-600 {
+            color: #a0aec0;
+        }
+
+        /* How It Works Section Background */
+        .dark #how { background-color: #0d1117; }
+
+        /* UPDATED: Impact Section Background in Dark Mode (Contrast) */
+        .dark #impact { background-color: #1a202c; } 
+
+        /* FAQ Details in Dark Mode */
+        .dark #faq details {
+            background-color: #1a202c;
+            border-left-color: #0891b2; /* Cyan accent */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+        }
+        .dark #faq summary {
+            color: #90cdf4;
+        }
+        .dark #faq p {
+            color: #a0aec0;
+            border-top-color: #2d3748;
+        }
+        
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
@@ -29,24 +89,31 @@
     <header class="fixed w-full z-50 bg-white/40 backdrop-blur-md border-b border-gray-200 shadow-md transition-all duration-500">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-cyan-400">
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-cyan-400 flex items-center">
+                <i class="fa-solid fa-droplet text-teal-500 mr-2 text-3xl"></i>
                 ZENFLOW
                 <span class="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-400 bg-clip-text text-transparent">.AI</span>
             </h1>
 
-            <nav class="hidden md:flex space-x-10 text-gray-800 font-medium text-sm">
-                <a href="#features" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Features</a>
-                <a href="#how" class="hover:text-cyan-600 transition duration-300 hover:scale-105">How It Works</a>
-                <a href="#impact" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Impact</a>
-                <a href="#faq" class="hover:text-cyan-600 transition duration-300 hover:scale-105">FAQs</a>
-                <a href="#contact" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Contact</a>
-            </nav>
-
-            <a href="https://flow-chatbot-2ypnuqtgeaxm2ryhuly5x2.streamlit.app"
-                target="_blank"
-                class="hidden md:inline-block px-6 py-2 rounded-full border border-gray-400 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-xl hover:brightness-110 transition duration-300">
-                FlowBot
-            </a>
+            <div class="flex items-center space-x-6">
+                <nav class="hidden md:flex space-x-6 text-gray-800 font-medium text-sm">
+                    <a href="#features" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Features</a>
+                    <a href="#how" class="hover:text-cyan-600 transition duration-300 hover:scale-105">How It Works</a>
+                    <a href="#impact" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Impact</a>
+                    <a href="#faq" class="hover:text-cyan-600 transition duration-300 hover:scale-105">FAQs</a>
+                    <a href="#contact" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Contact</a>
+                </nav>
+                
+                <button id="mode-toggle" class="p-2 rounded-full text-gray-700 dark:text-cyan-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition duration-300">
+                    <i class="fa-solid fa-moon text-lg" id="mode-icon"></i>
+                </button>
+                
+                <a href="https://flow-chatbot-2ypnuqtgeaxm2ryhuly5x2.streamlit.app"
+                    target="_blank"
+                    class="hidden lg:inline-block px-6 py-2 rounded-full border border-gray-400 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-xl hover:brightness-110 transition duration-300">
+                    FlowBot
+                </a>
+            </div>
         </div>
     </header>
 
@@ -55,7 +122,7 @@
         <div class="relative max-w-5xl mx-auto px-6">
             <p class="text-sm font-medium uppercase tracking-widest mb-4 text-cyan-300">Smart India Hackathon 2025 Project</p>
             <h2 class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter text-white">
-                Smarter Water for a <span class="text-teal-400"><br> Smarter Future</span> 💧
+                Smarter Water for a <span class="text-teal-400">Smarter Future</span> 💧
             </h2>
             <p class="mt-8 text-xl md:text-2xl font-light text-gray-300 max-w-3xl mx-auto">
                 ZENFLOW is an AI-powered chatbot that simplifies groundwater data, predictions, and water management planning for communities and researchers.
@@ -77,7 +144,7 @@
 
     <section id="features" class="max-w-7xl mx-auto py-24 px-6">
         <h3 class="text-5xl font-extrabold text-center mb-6 text-zen-blue">✨ Core Capabilities</h3>
-        <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">Leveraging deep learning and vast data to transform groundwater management from reactive to predictive.</p>
+        <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto dark:text-gray-400">Leveraging deep learning and vast data to transform groundwater management from reactive to predictive.</p>
         <div class="grid lg:grid-cols-3 gap-12">
             
             <div class="p-8 bg-white rounded-3xl border-t-4 border-cyan-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
@@ -122,11 +189,11 @@
     <section id="how" class="bg-indigo-50 py-24 px-6">
         <div class="max-w-6xl mx-auto text-center">
             <h3 class="text-5xl font-extrabold text-zen-blue mb-6">🔍 The FLOW Pipeline</h3>
-            <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">Seamless integration of data, deep learning, and multilingual Natural Language Processing (NLP).</p>
+            <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto dark:text-gray-400">Seamless integration of data, deep learning, and multilingual Natural Language Processing (NLP).</p>
 
             <div class="grid md:grid-cols-4 gap-8 text-left">
                 <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-cyan-400 transform hover:scale-105 transition duration-500">
-                    <div class="text-4xl font-extrabold mb-3 text-cyan-700">USER INPUT   <br>🗣️</div>
+                    <div class="text-4xl font-extrabold mb-3 text-cyan-700">USER INPUT <br>🗣️</div>
                     <h4 class="text-xl font-bold text-zen-blue mb-2">Query Capture</h4>
                     <p class="text-gray-600 text-sm">Text or Voice queries are captured. Multilingual NLP instantly detects the language (local or English).</p>
                 </div>
@@ -154,22 +221,22 @@
             <h3 class="text-5xl font-extrabold text-zen-blue mb-16">🌱 Driving Real-World Impact</h3>
             <div class="grid md:grid-cols-3 gap-12">
 
-                <div class="p-8 border-2 border-teal-500/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                <div class="p-8 border-2 border-teal-500/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:bg-gray-800">
                     <div class="text-6xl text-teal-500 mb-4"><i class="fa-solid fa-wheat-awn"></i></div>
-                    <h4 class="text-2xl font-bold text-zen-blue mb-3">Empower Farmers</h4>
-                    <p class="text-gray-600">Provides personalized, smart irrigation schedules based on real-time data, reducing water consumption by up to 30% while increasing yield.</p>
+                    <h4 class="text-2xl font-bold text-zen-blue">Empower Farmers</h4>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Provides personalized, smart irrigation schedules based on real-time data, reducing water consumption by up to 30% while increasing yield.</p>
                 </div>
 
-                <div class="p-8 border-2 border-indigo-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                <div class="p-8 border-2 border-indigo-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:bg-gray-800">
                     <div class="text-6xl text-indigo-600 mb-4"><i class="fa-solid fa-flask"></i></div>
-                    <h4 class="text-2xl font-bold text-zen-blue mb-3">Accelerate Research</h4>
-                    <p class="text-gray-600">Offers comprehensive dashboards, historical trend analysis, and exportable data for advanced academic and policy research.</p>
+                    <h4 class="text-2xl font-bold text-zen-blue">Accelerate Research</h4>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Offers comprehensive dashboards, historical trend analysis, and exportable data for advanced academic and policy research.</p>
                 </div>
 
-                <div class="p-8 border-2 border-blue-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                <div class="p-8 border-2 border-blue-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300 dark:bg-gray-800">
                     <div class="text-6xl text-blue-600 mb-4"><i class="fa-solid fa-chart-pie"></i></div>
-                    <h4 class="text-2xl font-bold text-zen-blue mb-3">Inform Policy</h4>
-                    <p class="text-gray-600">Supports decision-makers with accurate predictive models for water availability, enabling proactive conservation strategies.</p>
+                    <h4 class="text-2xl font-bold text-zen-blue">Inform Policy</h4>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Supports decision-makers with accurate predictive models for water availability, enabling proactive conservation strategies.</p>
                 </div>
 
             </div>
@@ -183,41 +250,41 @@
             
             <div class="space-y-6">
                 <details class="border-l-4 border-indigo-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-indigo-800">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-indigo-800 dark:text-cyan-400 dark:group-hover:text-indigo-300">
                         Can ZENFLOW work in rural areas with low internet?
                         <i class="fa-solid fa-chevron-down text-indigo-500 group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4 dark:text-gray-400">
                         Yes! ZENFLOW is highly optimized for *low-bandwidth environments* and can operate efficiently on basic mobile networks. We are actively developing a robust offline support feature for data access.
                     </p>
                 </details>
 
                 <details class="border-l-4 border-teal-500 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-teal-600">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-teal-600 dark:text-cyan-400 dark:group-hover:text-teal-300">
                         Is the chatbot available in regional Indian languages?
                         <i class="fa-solid fa-chevron-down text-teal-500 group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4 dark:text-gray-400">
                         Absolutely. ZENFLOW's core value is accessibility. We support *Hindi, Telugu, Tamil, and several other regional languages* thanks to our advanced multilingual NLP engine.
                     </p>
                 </details>
 
                 <details class="border-l-4 border-purple-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-purple-800">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-purple-800 dark:text-cyan-400 dark:group-hover:text-purple-300">
                         How accurate are the irrigation predictions?
                         <i class="fa-solid fa-chevron-down text-purple-500 group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4 dark:text-gray-400">
                         Predictions are based on a triangulated approach: real-time *INGRES data*, validated crop models, and up-to-the-minute weather forecasts. Accuracy is continuously validated and improves with localized user data inputs.
                     </p>
                 </details>
 
                 <details class="border-l-4 border-amber-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-amber-800">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-amber-800 dark:text-cyan-400 dark:group-hover:text-amber-300">
                         Is ZENFLOW part of the Smart India Hackathon 2025?
                         <i class="fa-solid fa-chevron-down text-amber-500 group-open:rotate-180 transition"></i>
                     </summary>
-                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4 dark:text-gray-400">
                         *Yes!* ZENFLOW is proudly developed as a problem statement solution for SIH2025, focused on revolutionizing groundwater data accessibility and management across India.
                     </p>
                 </details>
@@ -233,21 +300,21 @@
                 We’re looking for partnerships with government bodies, NGOs, and researchers. Let's build a sustainable water future together.
             </p>
 
-            <div class="bg-white/95 rounded-3xl shadow-2xl p-8 md:p-12 text-gray-800">
+            <div class="bg-white/95 rounded-3xl shadow-2xl p-8 md:p-12 text-gray-800 dark:bg-gray-800 dark:text-gray-200">
                 <form class="space-y-6 text-left">
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                        <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500" required/>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1 dark:text-gray-300">Your Name</label>
+                        <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white" required/>
                     </div>
 
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                        <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500" required/>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1 dark:text-gray-300">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white" required/>
                     </div>
 
                     <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                        <textarea id="message" rows="5" placeholder="Type your message here..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500" required></textarea>
+                        <label class="block text-sm font-medium text-gray-700 mb-1 dark:text-gray-300">Message</label>
+                        <textarea id="message" rows="5" placeholder="Type your message here..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500 dark:bg-gray-900 dark:border-gray-700 dark:text-white" required></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-zen-green text-black py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01]">
@@ -255,7 +322,7 @@
                     </button>
                 </form>
 
-                <div class="mt-10 text-center text-gray-600 font-medium">
+                <div class="mt-10 text-center text-gray-600 font-medium dark:text-gray-400">
                     <p><i class="fa-solid fa-envelope text-teal-600 mr-2"></i> zenflow.ingress@gmail.com</p>
                 </div>
             </div>
@@ -272,6 +339,48 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const html = document.documentElement;
+        const toggleButton = document.getElementById('mode-toggle');
+        const modeIcon = document.getElementById('mode-icon');
+
+        // Function to set the theme
+        function setTheme(theme) {
+            html.classList.remove('light', 'dark');
+            html.classList.add(theme);
+            localStorage.setItem('theme', theme);
+            updateIcon(theme);
+        }
+
+        // Function to update the icon
+        function updateIcon(theme) {
+            if (theme === 'dark') {
+                modeIcon.classList.remove('fa-moon');
+                modeIcon.classList.add('fa-sun');
+            } else {
+                modeIcon.classList.remove('fa-sun');
+                modeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Load theme from localStorage on page load
+        const storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+            setTheme(storedTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Check for OS preference if no theme is stored
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        // Toggle functionality
+        toggleButton.addEventListener('click', () => {
+            const currentTheme = html.classList.contains('dark') ? 'dark' : 'light';
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            setTheme(newTheme);
+        });
+    </script>
 </body>
 </html>
-
