@@ -1,297 +1,277 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZENFLOW | AI Groundwater Assistant</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <style>
-    /* Custom configuration for better font and color consistency */
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-    
-    /* Custom Blue and Green for the palette */
-    .zen-blue { color: #1e3a8a; } /* Deep Indigo/Navy */
-    .zen-green { color: #059669; } /* Emerald Green for contrast */
-    .bg-zen-blue-gradient {
-        background-image: linear-gradient(to right, #1e3a8a, #3730a3, #4f46e5); /* Deep Blue to Royal Purple */
-    }
-    .text-zen-blue { color: #1e3a8a; }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZENFLOW | AI Groundwater Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; }
+
+        /* 🌌 Deep Tech Blue Gradient for Hero */
+        .bg-deep-tech-gradient {
+            /* Rich, professional blue/teal gradient */
+            background: linear-gradient(to bottom right, #07193b, #032a4e, #07132a);
+        }
+
+        /* Custom Colors for Consistency */
+        .text-zen-blue { color: #0891b2; /* New Main Accent: Cyan-600 */ }
+        .bg-zen-green { background-color: #14b8a6; /* New Secondary Accent: Teal-500 */ }
+        .border-zen-green { border-color: #14b8a6; /* New Secondary Accent: Teal-500 */ }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased">
 
-  <header class="fixed w-full bg-white/95 backdrop-blur-lg shadow-md z-50 transition-shadow duration-300">
-    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <h1 class="text-3xl font-extrabold text-indigo-700 tracking-tight">ZENFLOW<span class="text-zen-green">.AI</span></h1>
-      <nav class="hidden md:flex space-x-10 text-gray-600 font-medium text-sm">
-        <a href="#features" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">Features</a>
-        <a href="#how" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">How It Works</a>
-        <a href="#impact" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">Impact</a>
-        <a href="#faq" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">FAQs</a>
-        <a href="#contact" class="hover:text-indigo-700 transition duration-300 transform hover:scale-105">Contact</a>
-      </nav>
-      <a href="#chatbot" id="flowbot-header-btn" class="hidden md:inline-block px-5 py-2 text-sm bg-zen-blue-gradient text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition duration-300 hover:scale-105"> FLOW bot</a>
-    </div>
-  </header>
+    <header class="fixed w-full z-50 bg-white/40 backdrop-blur-md border-b border-gray-200 shadow-md transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
 
-  <section class="pt-40 pb-32 bg-zen-blue-gradient text-white text-center relative overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/connected.png')] opacity-10"></div>
-    <div class="relative max-w-5xl mx-auto px-6">
-      <p class="text-sm font-medium uppercase tracking-widest mb-4 opacity-80">Smart India Hackathon 2025 Project</p>
-      <h2 class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter">
-        Smarter Water for a <span class="text-zen-green">Smarter Future</span> 💧
-      </h2>
-      <p class="mt-8 text-xl md:text-2xl font-light opacity-95 max-w-3xl mx-auto">
-       ZENFLOW is an AI-powered chatbot that simplifies groundwater data, predictions, and water management planning for communities and researchers
-      </p>
-      <div class="mt-12 flex justify-center gap-6">
-        <a href="#chatbot" id="flowbot-hero-btn" class="px-10 py-4 bg-zen-green text-white font-bold text-lg rounded-full shadow-2xl shadow-zen-green/50 hover:bg-opacity-90 transition duration-300 hover:scale-105 transform">
-          🚀 Launch FLOW bot
-        </a>
-        <a href="#features" class="px-10 py-4 border-2 border-white/70 rounded-full font-semibold text-lg hover:bg-white hover:text-indigo-800 transition duration-300 transform hover:scale-105">
-          Explore Features
-        </a>
-      </div>
-    </div>
-  </section>
-  
-  <hr class="border-t-4 border-zen-green/20">
+            <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-cyan-400">
+                ZENFLOW
+                <span class="bg-gradient-to-r from-teal-500 via-cyan-500 to-blue-400 bg-clip-text text-transparent">.AI</span>
+            </h1>
 
-  <section id="features" class="max-w-7xl mx-auto py-24 px-6">
-    <h3 class="text-5xl font-extrabold text-center mb-6 text-zen-blue">✨ Core Capabilities</h3>
-    <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">Leveraging deep learning and vast data to transform groundwater management from reactive to predictive.</p>
-    
-    <div class="grid lg:grid-cols-3 gap-12">
-      
-      <div class="p-8 bg-white rounded-3xl border-t-4 border-indigo-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
-        <div class="text-5xl text-indigo-700 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-comments"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue">Multilingual Chatbot</h4>
-        <p class="mt-3 text-gray-600">Access complex groundwater data in *plain language* and native dialects—Hindi, Telugu, Tamil, and more—making it truly accessible.</p>
-      </div>
+            <nav class="hidden md:flex space-x-10 text-gray-800 font-medium text-sm">
+                <a href="#features" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Features</a>
+                <a href="#how" class="hover:text-cyan-600 transition duration-300 hover:scale-105">How It Works</a>
+                <a href="#impact" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Impact</a>
+                <a href="#faq" class="hover:text-cyan-600 transition duration-300 hover:scale-105">FAQs</a>
+                <a href="#contact" class="hover:text-cyan-600 transition duration-300 hover:scale-105">Contact</a>
+            </nav>
 
-      <div class="p-8 bg-white rounded-3xl border-t-4 border-zen-green shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
-        <div class="text-5xl text-zen-green mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-chart-line"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue">Real-time Analytics</h4>
-        <p class="mt-3 text-gray-600">Visualize live groundwater levels, map contamination, and see drought forecasts instantly, powered by *INGRES* data integration.</p>
-      </div>
-
-      <div class="p-8 bg-white rounded-3xl border-t-4 border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
-        <div class="text-5xl text-amber-600 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-seedling"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue">Water management Planner</h4>
-        <p class="mt-3 text-gray-600">Get *AI-driven, crop-specific* irrigation recommendations. Minimize water waste, optimize usage, and significantly boost crop yield.</p>
-      </div>
-
-      <div class="p-8 bg-white rounded-3xl border-t-4 border-purple-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
-        <div class="text-5xl text-purple-700 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-brain"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue">CNN-LSTM Prediction Engine</h4>
-        <p class="mt-3 text-gray-600">Our hybrid deep learning model predicts *groundwater table trends* across short, medium, and long-term time horizons with high fidelity.</p>
-      </div>
-
-      <div class="p-8 bg-white rounded-3xl border-t-4 border-red-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
-        <div class="text-5xl text-red-600 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-triangle-exclamation"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue">Critical Water Stress Alerts</h4>
-        <p class="mt-3 text-gray-600">Proactive identification of critical water stress and drought zones, allowing for *timely, life-saving interventions* by authorities and farmers.</p>
-      </div>
-
-      <div class="p-8 bg-white rounded-3xl border-t-4 border-blue-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
-        <div class="text-5xl text-blue-700 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-shield-halved"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue">Source-Verified Transparency</h4>
-        <p class="mt-3 text-gray-600">Every response is *source-verified* and traceable back to the raw INGRES records, building trust and academic rigor.</p>
-      </div>
-
-    </div>
-  </section>
-
-  ---
-
-  <section id="how" class="bg-indigo-50 py-24 px-6">
-  <div class="max-w-6xl mx-auto text-center">
-    <h3 class="text-5xl font-extrabold text-zen-blue mb-6">🔍 The FLOW Pipeline</h3>
-    <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">Seamless integration of data, deep learning, and multilingual Natural Language Processing (NLP).</p>
-
-    <div class="grid md:grid-cols-4 gap-8 text-left">
-         <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-indigo-400 transform hover:scale-105 transition duration-500">
-        <div class="text-4xl font-extrabold mb-3 text-indigo-700">USER INPUT 🗣️</div>
-        <h4 class="text-xl font-bold text-zen-blue mb-2">Query Capture</h4>
-        <p class="text-gray-600 text-sm">Text or Voice queries are captured. Multilingual NLP instantly detects the language (local or English).</p>
-      </div>
-      <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-blue-400 transform hover:scale-105 transition duration-500">
-        <div class="text-4xl font-extrabold mb-3 text-blue-700">DATA INGESTION 💾</div>
-        <h4 class="text-xl font-bold text-zen-blue mb-2">Real-time Data Fetch</h4>
-        <p class="text-gray-600 text-sm">ZENFLOW securely connects to the INGRES groundwater database, sensors, and global weather feeds.</p>
-      </div>
-      <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-purple-400 transform hover:scale-105 transition duration-500">
-        <div class="text-4xl font-extrabold mb-3 text-purple-700"> AI PROCESS 🧠</div>
-        <h4 class="text-xl font-bold text-zen-blue mb-2">Analyze & Predict</h4>
-        <p class="text-gray-600 text-sm">Machine Learning models analyze patterns, perform predictive modeling, and translate raw data into actionable insights.</p>
-      </div>
-       <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-zen-green transform hover:scale-105 transition duration-500">
-        <div class="text-4xl font-extrabold mb-3 text-zen-green">CHATBOT DELIVERY 📈</div>
-        <h4 class="text-xl font-bold text-zen-blue mb-2">Instant Answer</h4>
-        <p class="text-gray-600 text-sm">The final answer is presented instantly via chatbot in multiple formats (text, charts, map overlay) and the user's native language.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  <section id="impact" class="bg-white py-24 px-6">
-  <div class="max-w-5xl mx-auto text-center">
-    <h3 class="text-5xl font-extrabold text-zen-blue mb-16">🌱 Driving Real-World Impact</h3>
-    <div class="grid md:grid-cols-3 gap-12">
-
-      <div class="p-8 border-2 border-zen-green/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
-        <div class="text-6xl text-zen-green mb-4"><i class="fa-solid fa-wheat-awn"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue mb-3">Empower Farmers</h4>
-        <p class="text-gray-600">Provides personalized, smart irrigation schedules based on real-time data, reducing water consumption by up to 30% while increasing yield.</p>
-      </div>
-
-      <div class="p-8 border-2 border-indigo-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
-        <div class="text-6xl text-indigo-600 mb-4"><i class="fa-solid fa-flask"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue mb-3">Accelerate Research</h4>
-        <p class="text-gray-600">Offers comprehensive dashboards, historical trend analysis, and exportable data for advanced academic and policy research.</p>
-      </div>
-
-      <div class="p-8 border-2 border-blue-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
-        <div class="text-6xl text-blue-600 mb-4"><i class="fa-solid fa-chart-pie"></i></div>
-        <h4 class="text-2xl font-bold text-zen-blue mb-3">Inform Policy</h4>
-        <p class="text-gray-600">Supports decision-makers with accurate predictive models for water availability, enabling proactive conservation strategies.</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-  <section id="faq" class="bg-gray-50 py-24 px-6">
-  <div class="max-w-4xl mx-auto">
-    <h3 class="text-5xl font-extrabold text-zen-blue text-center mb-16">❓ Quick Answers (FAQs)</h3>
-    
-    <div class="space-y-6">
-      <details class="border-l-4 border-indigo-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-        <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-indigo-800">
-          Can ZENFLOW work in rural areas with low internet?
-          <i class="fa-solid fa-chevron-down text-indigo-500 group-open:rotate-180 transition"></i>
-        </summary>
-        <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
-          Yes! ZENFLOW is highly optimized for *low-bandwidth environments* and can operate efficiently on basic mobile networks. We are actively developing a robust offline support feature for data access.
-        </p>
-      </details>
-
-      <details class="border-l-4 border-zen-green bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-        <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-zen-green">
-          Is the chatbot available in regional Indian languages?
-          <i class="fa-solid fa-chevron-down text-zen-green group-open:rotate-180 transition"></i>
-        </summary>
-        <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
-          Absolutely. ZENFLOW's core value is accessibility. We support *Hindi, Telugu, Tamil, and several other regional languages* thanks to our advanced multilingual NLP engine.
-        </p>
-      </details>
-
-      <details class="border-l-4 border-purple-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-        <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-purple-800">
-          How accurate are the irrigation predictions?
-          <i class="fa-solid fa-chevron-down text-purple-500 group-open:rotate-180 transition"></i>
-        </summary>
-        <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
-          Predictions are based on a triangulated approach: real-time *INGRES data*, validated crop models, and up-to-the-minute weather forecasts. Accuracy is continuously validated and improves with localized user data inputs.
-        </p>
-      </details>
-
-       <details class="border-l-4 border-amber-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
-        <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-amber-800">
-          Is ZENFLOW part of the Smart India Hackathon 2025?
-          <i class="fa-solid fa-chevron-down text-amber-500 group-open:rotate-180 transition"></i>
-        </summary>
-        <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
-          *Yes!* ZENFLOW is proudly developed as a problem statement solution for SIH2025, focused on revolutionizing groundwater data accessibility and management across India.
-        </p>
-      </details>
-    </div>
-  </div>
-</section>
-
-  <section id="contact" class="bg-zen-blue-gradient py-24 px-6 text-white">
-  <div class="max-w-4xl mx-auto text-center">
-    <h3 class="text-5xl font-extrabold mb-4">🤝 Collaborate with Us</h3>
-    <p class="text-white/80 text-xl font-light mb-12">
-      We’re looking for partnerships with government bodies, NGOs, and researchers. Let's build a sustainable water future together.
-    </p>
-
-    <div class="bg-white/95 rounded-3xl shadow-2xl p-8 md:p-12 text-gray-800">
-      <form class="space-y-6 text-left">
-        <div>
-          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-          <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
+            <a href="https://flow-chatbot-2ypnuqtgeaxm2ryhuly5x2.streamlit.app"
+                target="_blank"
+                class="hidden md:inline-block px-6 py-2 rounded-full border border-gray-400 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-xl hover:brightness-110 transition duration-300">
+                FlowBot
+            </a>
         </div>
+    </header>
 
-        <div>
-          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-          <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" required/>
+    <section class="pt-40 pb-32 bg-deep-tech-gradient text-gray-100 text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+        <div class="relative max-w-5xl mx-auto px-6">
+            <p class="text-sm font-medium uppercase tracking-widest mb-4 text-cyan-300">Smart India Hackathon 2025 Project</p>
+            <h2 class="text-6xl md:text-7xl font-extrabold leading-tight tracking-tighter text-white">
+                Smarter Water for a <span class="text-teal-400">Smarter Future</span> 💧
+            </h2>
+            <p class="mt-8 text-xl md:text-2xl font-light text-gray-300 max-w-3xl mx-auto">
+                ZENFLOW is an AI-powered chatbot that simplifies groundwater data, predictions, and water management planning for communities and researchers.
+            </p>
+            <div class="mt-12 flex justify-center gap-6">
+                <a href="https://flow-chatbot-2ypnuqtgeaxm2ryhuly5x2.streamlit.app" target="_blank"
+                    class="px-10 py-4 font-bold text-lg rounded-full bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-500 text-white border border-gray-400 hover:from-teal-300 hover:via-cyan-400 hover:to-blue-600 hover:scale-105 transform transition-all duration-300 shadow-lg">
+                    🚀 Launch FlowBot
+                </a>
+                <a href="#features"
+                    class="px-10 py-4 border-2 border-teal-400/40 rounded-full font-semibold text-lg text-teal-300 hover:bg-white/10 transition duration-300 transform hover:scale-105">
+                    Explore Features
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div>
-          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-          <textarea id="message" rows="5" placeholder="Type your message here..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500" required></textarea>
+    <hr class="border-t-4 border-zen-green/20">
+
+    <section id="features" class="max-w-7xl mx-auto py-24 px-6">
+        <h3 class="text-5xl font-extrabold text-center mb-6 text-zen-blue">✨ Core Capabilities</h3>
+        <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">Leveraging deep learning and vast data to transform groundwater management from reactive to predictive.</p>
+        <div class="grid lg:grid-cols-3 gap-12">
+            
+            <div class="p-8 bg-white rounded-3xl border-t-4 border-cyan-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
+                <div class="text-5xl text-cyan-700 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-comments"></i></div>
+                <h4 class="text-2xl font-bold text-zen-blue">Multilingual Chatbot</h4>
+                <p class="mt-3 text-gray-600">Access complex groundwater data in *plain language* and native dialects—Hindi, Telugu, Tamil, and more—making it truly accessible.</p>
+            </div>
+
+            <div class="p-8 bg-white rounded-3xl border-t-4 border-teal-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
+                <div class="text-5xl text-teal-600 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-chart-line"></i></div>
+                <h4 class="text-2xl font-bold text-zen-blue">Real-time Analytics</h4>
+                <p class="mt-3 text-gray-600">Visualize live groundwater levels, map contamination, and see drought forecasts instantly, powered by *INGRES* data integration.</p>
+            </div>
+
+            <div class="p-8 bg-white rounded-3xl border-t-4 border-amber-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
+                <div class="text-5xl text-amber-600 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-seedling"></i></div>
+                <h4 class="text-2xl font-bold text-zen-blue">Water management Planner</h4>
+                <p class="mt-3 text-gray-600">Get *AI-driven, crop-specific* irrigation recommendations. Minimize water waste, optimize usage, and significantly boost crop yield.</p>
+            </div>
+
+            <div class="p-8 bg-white rounded-3xl border-t-4 border-indigo-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
+                <div class="text-5xl text-indigo-600 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-brain"></i></div>
+                <h4 class="text-2xl font-bold text-zen-blue">CNN-LSTM Prediction Engine</h4>
+                <p class="mt-3 text-gray-600">Our hybrid deep learning model predicts *groundwater table trends* across short, medium, and long-term time horizons with high fidelity.</p>
+            </div>
+
+            <div class="p-8 bg-white rounded-3xl border-t-4 border-red-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
+                <div class="text-5xl text-red-600 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h4 class="text-2xl font-bold text-zen-blue">Critical Water Stress Alerts</h4>
+                <p class="mt-3 text-gray-600">Proactive identification of critical water stress and drought zones, allowing for *timely, life-saving interventions* by authorities and farmers.</p>
+            </div>
+
+            <div class="p-8 bg-white rounded-3xl border-t-4 border-blue-500 shadow-xl hover:shadow-2xl hover:-translate-y-1 transition duration-500 group">
+                <div class="text-5xl text-blue-700 mb-6 group-hover:scale-110 transition duration-300"><i class="fa-solid fa-shield-halved"></i></div>
+                <h4 class="text-2xl font-bold text-zen-blue">Source-Verified Transparency</h4>
+                <p class="mt-3 text-gray-600">Every response is *source-verified* and traceable back to the raw INGRES records, building trust and academic rigor.</p>
+            </div>
+
         </div>
+    </section>
 
-        <button type="submit" class="w-full bg-zen-green text-black py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01]">
-          Send Message
-        </button>
-      </form>
+    <section id="how" class="bg-indigo-50 py-24 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h3 class="text-5xl font-extrabold text-zen-blue mb-6">🔍 The FLOW Pipeline</h3>
+            <p class="text-xl text-center text-gray-500 mb-16 max-w-3xl mx-auto">Seamless integration of data, deep learning, and multilingual Natural Language Processing (NLP).</p>
 
-      <div class="mt-10 text-center text-gray-600 font-medium">
-        <p><i class="fa-solid fa-envelope text-indigo-600 mr-2"></i> zenflow.ingress@gmail.com</p>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="grid md:grid-cols-4 gap-8 text-left">
+                <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-cyan-400 transform hover:scale-105 transition duration-500">
+                    <div class="text-4xl font-extrabold mb-3 text-cyan-700">USER INPUT   <br>🗣️</div>
+                    <h4 class="text-xl font-bold text-zen-blue mb-2">Query Capture</h4>
+                    <p class="text-gray-600 text-sm">Text or Voice queries are captured. Multilingual NLP instantly detects the language (local or English).</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-blue-400 transform hover:scale-105 transition duration-500">
+                    <div class="text-4xl font-extrabold mb-3 text-blue-700">DATA INGESTION 💾</div>
+                    <h4 class="text-xl font-bold text-zen-blue mb-2">Real-time Data Fetch</h4>
+                    <p class="text-gray-600 text-sm">ZENFLOW securely connects to the INGRES groundwater database, sensors, and global weather feeds.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-purple-400 transform hover:scale-105 transition duration-500">
+                    <div class="text-4xl font-extrabold mb-3 text-purple-700"> AI PROCESS 🧠</div>
+                    <h4 class="text-xl font-bold text-zen-blue mb-2">Analyze & Predict</h4>
+                    <p class="text-gray-600 text-sm">Machine Learning models analyze patterns, perform predictive modeling, and translate raw data into actionable insights.</p>
+                </div>
+                <div class="p-8 bg-white rounded-2xl shadow-lg border-b-4 border-teal-500 transform hover:scale-105 transition duration-500">
+                    <div class="text-4xl font-extrabold mb-3 text-teal-600">CHATBOT DELIVERY 📈</div>
+                    <h4 class="text-xl font-bold text-zen-blue mb-2">Instant Answer</h4>
+                    <p class="text-gray-600 text-sm">The final answer is presented instantly via chatbot in multiple formats (text, charts, map overlay) and the user's native language.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<footer class="bg-gray-900 text-white py-10 px-6">
-  <div class="max-w-7xl mx-auto text-center md:flex md:justify-between md:items-center">
-    <p class="text-lg font-bold">ZENFLOW.AI</p>
-    <p class="text-sm text-gray-400 mt-2 md:mt-0">©️ 2025 ZENFLOW Project. Developed for SIH2025. All rights reserved.</p>
-    <div class="flex justify-center space-x-6 mt-4 md:mt-0">
-      <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
-      <a href="#" class="text-gray-400 hover:text-black transition"><i class="fa-brands fa-github text-xl"></i></a>
-    </div>
-  </div>
-</footer>
+    <section id="impact" class="bg-white py-24 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <h3 class="text-5xl font-extrabold text-zen-blue mb-16">🌱 Driving Real-World Impact</h3>
+            <div class="grid md:grid-cols-3 gap-12">
 
-<script>
-/**
- * Opens the 'flowbot.html' page in a new tab.
- */
-function launchFlowBot() {
-    // This is the file that contains the message and video link.
-    const chatbotURL = 'flowbot.html'; 
-    window.open(chatbotURL, '_blank');
-}
+                <div class="p-8 border-2 border-teal-500/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                    <div class="text-6xl text-teal-500 mb-4"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <h4 class="text-2xl font-bold text-zen-blue mb-3">Empower Farmers</h4>
+                    <p class="text-gray-600">Provides personalized, smart irrigation schedules based on real-time data, reducing water consumption by up to 30% while increasing yield.</p>
+                </div>
 
-function setupFlowBotButtons() {
-    const headerButton = document.getElementById('flowbot-header-btn');
-    const heroButton = document.getElementById('flowbot-hero-btn');
-    
-    // Attach the launchFlowBot function to both buttons
-    if (headerButton) {
-        headerButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the default scroll behavior
-            launchFlowBot();
-        });
-    }
+                <div class="p-8 border-2 border-indigo-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                    <div class="text-6xl text-indigo-600 mb-4"><i class="fa-solid fa-flask"></i></div>
+                    <h4 class="text-2xl font-bold text-zen-blue mb-3">Accelerate Research</h4>
+                    <p class="text-gray-600">Offers comprehensive dashboards, historical trend analysis, and exportable data for advanced academic and policy research.</p>
+                </div>
 
-    if (heroButton) {
-        heroButton.addEventListener('click', function(event) {
-            event.preventDefault(); // Stop the default scroll behavior
-            launchFlowBot();
-        });
-    }
-}
+                <div class="p-8 border-2 border-blue-400/30 rounded-2xl shadow-xl hover:shadow-2xl transition duration-300">
+                    <div class="text-6xl text-blue-600 mb-4"><i class="fa-solid fa-chart-pie"></i></div>
+                    <h4 class="text-2xl font-bold text-zen-blue mb-3">Inform Policy</h4>
+                    <p class="text-gray-600">Supports decision-makers with accurate predictive models for water availability, enabling proactive conservation strategies.</p>
+                </div>
 
-// Execute the setup function once the page is fully loaded
-document.addEventListener('DOMContentLoaded', setupFlowBotButtons);
-</script>
+            </div>
+        </div>
+    </section>
 
+
+    <section id="faq" class="bg-gray-50 py-24 px-6">
+        <div class="max-w-4xl mx-auto">
+            <h3 class="text-5xl font-extrabold text-zen-blue text-center mb-16">❓ Quick Answers (FAQs)</h3>
+            
+            <div class="space-y-6">
+                <details class="border-l-4 border-indigo-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-indigo-800">
+                        Can ZENFLOW work in rural areas with low internet?
+                        <i class="fa-solid fa-chevron-down text-indigo-500 group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                        Yes! ZENFLOW is highly optimized for *low-bandwidth environments* and can operate efficiently on basic mobile networks. We are actively developing a robust offline support feature for data access.
+                    </p>
+                </details>
+
+                <details class="border-l-4 border-teal-500 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-teal-600">
+                        Is the chatbot available in regional Indian languages?
+                        <i class="fa-solid fa-chevron-down text-teal-500 group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                        Absolutely. ZENFLOW's core value is accessibility. We support *Hindi, Telugu, Tamil, and several other regional languages* thanks to our advanced multilingual NLP engine.
+                    </p>
+                </details>
+
+                <details class="border-l-4 border-purple-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-purple-800">
+                        How accurate are the irrigation predictions?
+                        <i class="fa-solid fa-chevron-down text-purple-500 group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                        Predictions are based on a triangulated approach: real-time *INGRES data*, validated crop models, and up-to-the-minute weather forecasts. Accuracy is continuously validated and improves with localized user data inputs.
+                    </p>
+                </details>
+
+                <details class="border-l-4 border-amber-600 bg-white shadow-lg rounded-xl transition duration-300 hover:shadow-xl group">
+                    <summary class="flex justify-between items-center p-6 cursor-pointer font-semibold text-lg text-zen-blue group-hover:text-amber-800">
+                        Is ZENFLOW part of the Smart India Hackathon 2025?
+                        <i class="fa-solid fa-chevron-down text-amber-500 group-open:rotate-180 transition"></i>
+                    </summary>
+                    <p class="px-6 pb-6 text-gray-600 border-t border-gray-100 mt-2 pt-4">
+                        *Yes!* ZENFLOW is proudly developed as a problem statement solution for SIH2025, focused on revolutionizing groundwater data accessibility and management across India.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="bg-gray-900 py-24 px-6 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-5xl font-extrabold mb-4 text-white">🤝 Collaborate with Us</h3>
+            <p class="text-gray-300 text-xl font-light mb-12">
+                We’re looking for partnerships with government bodies, NGOs, and researchers. Let's build a sustainable water future together.
+            </p>
+
+            <div class="bg-white/95 rounded-3xl shadow-2xl p-8 md:p-12 text-gray-800">
+                <form class="space-y-6 text-left">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                        <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500" required/>
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                        <input type="email" id="email" placeholder="you@example.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500" required/>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" rows="5" placeholder="Type your message here..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-teal-500" required></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-zen-green text-black py-4 rounded-lg font-bold text-lg hover:bg-opacity-90 transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-[1.01]">
+                        Send Message
+                    </button>
+                </form>
+
+                <div class="mt-10 text-center text-gray-600 font-medium">
+                    <p><i class="fa-solid fa-envelope text-teal-600 mr-2"></i> zenflow.ingress@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-10 px-6">
+        <div class="max-w-7xl mx-auto text-center md:flex md:justify-between md:items-center">
+            <p class="text-lg font-bold">ZENFLOW.AI</p>
+            <p class="text-sm text-gray-400 mt-2 md:mt-0">©️ 2025 ZENFLOW Project. Developed for SIH2025. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4 md:mt-0">
+                <a href="#" class="text-gray-400 hover:text-teal-400 transition"><i class="fa-brands fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-brands fa-github text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
+
