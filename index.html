@@ -81,6 +81,12 @@
             color: #a0aec0;
             border-top-color: #2d3748;
         }
+
+        /* CUSTOM SWITCH CSS (Ensures smooth movement) */
+        /* This class is added/removed by JS to control the thumb's movement */
+        .thumb-moved {
+            transform: translateX(100%);
+        }
         
     </style>
 </head>
@@ -108,11 +114,11 @@
                     class="relative w-20 h-8 flex items-center rounded-full cursor-pointer transition-colors duration-500 bg-gray-300 dark:bg-gray-700 p-1">
                     
                     <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-bold text-gray-500 dark:text-gray-400">
-                        <i class="fa-solid fa-sun text-lg text-gray-600 dark:text-cyan-500" id="light-icon"></i> 
+                        <i class="fa-solid fa-sun text-lg text-gray-600 dark:text-cyan-500"></i> 
                         <span class="opacity-0 dark:opacity-100 transition-opacity duration-300 text-sm">DARK</span> 
                     </div>
 
-                    <div id="switch-thumb" class="w-6 h-6 rounded-full bg-white shadow-md dark:transform dark:translate-x-full transition-transform duration-500 flex items-center justify-center">
+                    <div id="switch-thumb" class="w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-500 flex items-center justify-center">
                         <i class="fa-solid text-lg text-gray-700 dark:text-cyan-400" id="mode-icon"></i>
                     </div>
                 </button>
@@ -353,7 +359,10 @@
         const toggleButton = document.getElementById('mode-toggle');
         const modeIcon = document.getElementById('mode-icon');
         const switchThumb = document.getElementById('switch-thumb');
-        const lightIcon = document.getElementById('light-icon'); 
+        // Note: We don't need lightIcon explicitly in JS since its look is controlled by CSS/parent dark class
+
+        // CSS class for moving the thumb
+        const MOVED_CLASS = 'thumb-moved';
 
         // Function to set the theme
         function setTheme(theme) {
@@ -366,15 +375,19 @@
         // Function to update the icon and position
         function updateSwitchAppearance(theme) {
             if (theme === 'dark') {
+                // Add class to move the thumb to the right
+                switchThumb.classList.add(MOVED_CLASS);
+                
                 // Update the icon on the thumb to MOON
                 modeIcon.classList.remove('fa-sun');
                 modeIcon.classList.add('fa-moon');
-                // The dark: classes in HTML/CSS handle the background color and thumb position (translate-x-full)
             } else {
+                // Remove class to move the thumb back to the left
+                switchThumb.classList.remove(MOVED_CLASS);
+                
                 // Update the icon on the thumb to SUN
                 modeIcon.classList.remove('fa-moon');
                 modeIcon.classList.add('fa-sun');
-                // The light mode (default) classes handle the background and thumb position (no translation)
             }
         }
 
