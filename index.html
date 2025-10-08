@@ -131,45 +131,17 @@
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </div>
                 </div>
-          <!-- ✅ Dark Mode Toggle Button -->
-<button id="mode-toggle" aria-label="Toggle Dark Mode"
-  class="relative w-20 h-8 flex items-center rounded-full cursor-pointer transition-colors duration-500 bg-gray-300 dark:bg-gray-700 p-1 overflow-hidden">
+          <button id="mode-toggle" aria-label="Toggle Dark Mode" class="relative w-20 h-8 flex items-center rounded-full cursor-pointer transition-colors duration-500 bg-gray-300 dark:bg-gray-700 p-1">
+                    
+                    <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-bold text-gray-500 dark:text-gray-400">
+                         
+                        <span class="opacity-0 dark:opacity-100 transition-opacity duration-300 text-sm">DARK</span> 
+                    </div>
 
-  <!-- Text container -->
-  <div class="absolute inset-0 flex items-center justify-between px-2 text-xs font-bold text-gray-500 dark:text-gray-300">
-    <span class="text-sm transition-all duration-300 opacity-100 dark:opacity-0 translate-x-0 dark:-translate-x-6">DARK</span>
-    <span class="text-sm transition-all duration-300 opacity-0 dark:opacity-100 translate-x-6 dark:translate-x-0">LIGHT</span>
-  </div>
-
-  <!-- Thumb -->
-  <div id="switch-thumb"
-    class="w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-500 flex items-center justify-center transform translate-x-0 dark:translate-x-12">
-    <i id="mode-icon" class="fa-solid text-lg text-gray-700 dark:text-cyan-400 fa-sun"></i>
-  </div>
-</button>
-
-<script>
-  const toggle = document.getElementById('mode-toggle');
-  const htmlEl = document.documentElement;
-
-  toggle.addEventListener('click', () => {
-    htmlEl.classList.toggle('dark');
-
-    // Optional: persist mode in localStorage
-    if (htmlEl.classList.contains('dark')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // Load mode from storage on page load
-  if (localStorage.getItem('theme') === 'dark') {
-    htmlEl.classList.add('dark');
-  } else {
-    htmlEl.classList.remove('dark');
-  }
-</script>
+                    <i class="fa-solid fa-sun text-lg text-gray-600 dark:text-cyan-500"></i><div id="switch-thumb" class="w-6 h-6 rounded-full bg-white shadow-md transition-transform duration-500 flex items-center justify-center">
+                        <i class="fa-solid text-lg text-gray-700 dark:text-cyan-400 fa-sun" id="mode-icon"></i>
+                    </div>
+                </button>
                 <a href="https://flow-chatbot-2ypnuqtgeaxm2ryhuly5x2.streamlit.app"
                     target="_blank"
                     class="hidden lg:inline-block px-6 py-2 rounded-full border border-gray-400 bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-500 text-white font-semibold shadow-md hover:scale-105 hover:shadow-xl hover:brightness-110 transition duration-300">
